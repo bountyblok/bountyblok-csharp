@@ -224,17 +224,47 @@ namespace bountyblok.client
         }
 
         /// <summary>
-        /// Make a request to log a task through bountyblok asynchronously.
+        /// Make a request to log a task by Challenge ID through bountyblok asynchronously
         /// </summary>
-        /// <param name="msg">A BountyblokLogTask object with the details for the request.</param>
+        /// <param name="request">A LogTaskRequest object with the details for the request.</param>
         /// <param name="cancellationToken">Cancel the asynchronous call.</param>
         /// <returns>A Response object.</returns>
-        public async Task<BountyblokResponse> LogTaskAsync(BountyblokLogTask msg, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<BountyblokResponse> LogTaskAsync(LogTaskRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             return await this.RequestAsync(
                 Method.POST,
-                JsonConvert.SerializeObject(msg),
+                JsonConvert.SerializeObject(request),
                 urlPath: "log_task",
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Make a request to log a task by App ID through bountyblok asynchronously
+        /// </summary>
+        /// <param name="request">A LogAppRequest object with the details for the request.</param>
+        /// <param name="cancellationToken">Cancel the asynchronous call.</param>
+        /// <returns>A Response object.</returns>
+        public async Task<BountyblokResponse> LogAppAsync(LogAppRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return await this.RequestAsync(
+                Method.POST,
+                JsonConvert.SerializeObject(request),
+                urlPath: "log_app",
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Make a request to log a task by App ID through bountyblok asynchronously
+        /// </summary>
+        /// <param name="request">A LogAppRequest object with the details for the request.</param>
+        /// <param name="cancellationToken">Cancel the asynchronous call.</param>
+        /// <returns>A Response object.</returns>
+        public async Task<BountyblokResponse> GetChallengeAsync(GetChallengeRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return await this.RequestAsync(
+                Method.POST,
+                JsonConvert.SerializeObject(request),
+                urlPath: "get_challenge_progress",
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 

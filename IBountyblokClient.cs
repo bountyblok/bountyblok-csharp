@@ -59,11 +59,27 @@ namespace bountyblok.client
         Task<BountyblokResponse> RequestAsync(BountyblokClient.Method method, string requestBody = null, string queryParams = null, string urlPath = null, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Make a request to log a task through bountyblok asynchronously.
+        /// Make a request to log a task by Challenge ID through bountyblok asynchronously.
         /// </summary>
-        /// <param name="msg">A BountyblokLogTask object with the details for the request.</param>
+        /// <param name="request">A LogTaskRequest object with the details for the request.</param>
         /// <param name="cancellationToken">Cancel the asynchronous call.</param>
         /// <returns>A Response object.</returns>
-        Task<BountyblokResponse> LogTaskAsync(BountyblokLogTask logTask, CancellationToken cancellationToken = default(CancellationToken));
+        Task<BountyblokResponse> LogTaskAsync(LogTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Make a request to log a task by App ID through bountyblok asynchronously.
+        /// </summary>
+        /// <param name="request">A LogAppRequest object with the details for the request.</param>
+        /// <param name="cancellationToken">Cancel the asynchronous call.</param>
+        /// <returns>A Response object.</returns>
+        Task<BountyblokResponse> LogAppAsync(LogAppRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Make a request to get a challenge and its progress for a user through bountyblok asynchronously.
+        /// </summary>
+        /// <param name="request">A GetChallengeRequest object with the details for the request.</param>
+        /// <param name="cancellationToken">Cancel the asynchronous call.</param>
+        /// <returns>A Response object.</returns>
+        Task<BountyblokResponse> GetChallengeAsync(GetChallengeRequest request, CancellationToken cancellationToken = default(CancellationToken));
     }
 }

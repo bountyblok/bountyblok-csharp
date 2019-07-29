@@ -1,7 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard1.2</TargetFramework>
+    <Product>Bountyblok</Product>
+    <Company>bountyblok.io</Company>
+    <Authors>bountyblok.io</Authors>
+    <PackageProjectUrl>https://github.com/bountyblok/bountyblok-csharp</PackageProjectUrl>
+    <PackageIconUrl>https://avatars1.githubusercontent.com/u/53401686?s=460&amp;v=4</PackageIconUrl>
+    <PackageTags>gamification, saas, .NET, core</PackageTags>
+    <Description>C# client library for using bountyblok's APIs to log challenge tasks and retrieve progress and achievements.</Description>
+    <PackageId>Bountyblok</PackageId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
