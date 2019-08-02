@@ -4,7 +4,7 @@ using System;
 namespace bountyblok.client
 {
     /// <summary>
-    /// Class BountyblokLogTask builds an object that logs a task to bountyblok API.
+    /// Class LogTaskRequest builds an object that logs a task to bountyblok API.
     /// </summary>
     [JsonObject(IsReference = false)]
     public class LogTaskRequest

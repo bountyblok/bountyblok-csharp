@@ -80,6 +80,6 @@ namespace bountyblok.client
         /// <param name="request">A GetChallengeRequest object with the details for the request.</param>
         /// <param name="cancellationToken">Cancel the asynchronous call.</param>
         /// <returns>A Response object.</returns>
-        Task<BountyblokResponse> GetChallengeAsync(GetChallengeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetChallengeResponse> GetChallengeAsync(GetChallengeRequest request, CancellationToken cancellationToken = default(CancellationToken));
     }
 }

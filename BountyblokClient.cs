@@ -259,13 +259,15 @@ namespace bountyblok.client
         /// <param name="request">A LogAppRequest object with the details for the request.</param>
         /// <param name="cancellationToken">Cancel the asynchronous call.</param>
         /// <returns>A Response object.</returns>
-        public async Task<BountyblokResponse> GetChallengeAsync(GetChallengeRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<GetChallengeResponse> GetChallengeAsync(GetChallengeRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await this.RequestAsync(
-                Method.POST,
-                JsonConvert.SerializeObject(request),
+            var response = await this.RequestAsync(
+                Method.GET,
+                queryParams: JsonConvert.SerializeObject(request),
                 urlPath: "get_challenge_progress",
                 cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            return JsonConvert.DeserializeObject<GetChallengeResponse>(response.Body.ReadAsStringAsync().Result);
         }
 
         /// <summary>

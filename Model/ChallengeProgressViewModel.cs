@@ -1,15 +1,10 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace bountyblok.client
 {
-    /// <summary>
-    /// Class GetChallengeResponse returns a challenge progress.
-    /// </summary>
-    [JsonObject(IsReference = false)]
-    public class GetChallengeResponse
+    public class ChallengeProgressViewModel
     {
         [JsonProperty("challenge_id")]
         public Guid ChallengeID { get; set; }
