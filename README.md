@@ -1,4 +1,4 @@
-﻿**This library allows you to easily use the bountblok.io APIs via C#**
+﻿**This library allows you to easily use the bountyblok.io APIs via C#**
 
 bountyblok.io is a gamification engine powered by the EOS blockchain.
 
